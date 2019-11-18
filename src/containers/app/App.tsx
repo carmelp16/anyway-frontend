@@ -1,13 +1,25 @@
-import React from 'react';
-import AnywayMap from '../map/Map';
-import styles from "./App.module.css";
+import React from "react";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Layout } from "antd";
+import { Home } from "../home";
+import { NavBar } from "../navbar";
+import "./App.css";
+
+const { Content } = Layout;
 
 const App: React.FC = () => {
   return (
-    <div className={styles.mainApp}>
-      <AnywayMap />
-    </div>
+    <Router>
+      <Layout>
+        <NavBar />
+        <Content>
+          <Switch>
+            <Route path="/" component={Home} />
+          </Switch>
+        </Content>
+      </Layout>
+    </Router>
   );
-}
+};
 
 export default App;
