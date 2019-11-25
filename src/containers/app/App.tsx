@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import { Layout } from "antd";
 import { Home } from "../home";
+import { ReportsManager } from "../reports/manager";
 import { NavBar } from "../navbar";
 import "./App.css";
 
@@ -14,7 +15,8 @@ const App: React.FC = () => {
         <NavBar />
         <Content>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route path="/reports" component={ReportsManager} />
           </Switch>
         </Content>
       </Layout>
