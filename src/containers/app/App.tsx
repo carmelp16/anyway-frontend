@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <Router>
       <Layout>
         <NavBar />
-        <Content>
+        <Content className={"main-content"}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/reports" component={ReportsManager} />

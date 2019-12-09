@@ -1,10 +1,7 @@
 import React, { FC, useMemo } from "react";
 
 import { AccidentsReports } from "../accidents";
-
-const ACCIDENTS = "Accidents";
-
-type ReportType = "Accidents";
+import { ReportType, ACCIDENTS } from "../types";
 
 const TypeToComponent: Record<ReportType, FC> = {
   [ACCIDENTS]: AccidentsReports

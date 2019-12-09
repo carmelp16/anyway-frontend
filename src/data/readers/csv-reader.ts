@@ -1,16 +1,16 @@
 import IDataReader from "./i-data-reader";
 
 class CsvReader implements IDataReader {
-  private csvPath: string;
+  private csvShitUrl: string;
 
   constructor() {
-    this.csvPath = "./query1.csv";
+    this.csvShitUrl = "http://localhost:5000/csv";
   }
 
   private readCsv: () => Promise<string> = () => {
     return new Promise(resolve => {
       const request = new XMLHttpRequest();
-      request.open("GET", this.csvPath, true);
+      request.open("GET", this.csvShitUrl, true);
       request.onreadystatechange = () => {
         if (request.readyState === 4) {
           if (request.status === 200 || request.status === 0) {
